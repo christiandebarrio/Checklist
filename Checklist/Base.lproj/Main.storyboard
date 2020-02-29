@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Checklist" id="ddF-34-igb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GRh-of-xbr">
                             <connections>
-                                <action selector="addItem:" destination="NlD-ND-FKP" id="uVc-gf-VkE"/>
+                                <segue destination="cq1-OZ-Fp4" kind="show" id="Bnc-bS-AKo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -55,6 +55,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssZ-vX-WWQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="117.39130434782609"/>
+        </scene>
+        <!--Add Item Table View Controller-->
+        <scene sceneID="5jF-XT-ldl">
+            <objects>
+                <tableViewController id="cq1-OZ-Fp4" customClass="AddItemTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="6vJ-a5-m0W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="UaP-gl-ICZ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Z52-6q-Ep9">
+                                        <rect key="frame" x="0.0" y="18" width="414" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z52-6q-Ep9" id="bg4-Dz-teF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8E-wy-JdD">
+                                                    <rect key="frame" x="20" y="5" width="374" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="h8E-wy-JdD" firstAttribute="leading" secondItem="bg4-Dz-teF" secondAttribute="leading" constant="20" symbolic="YES" id="FqA-Le-yss"/>
+                                                <constraint firstItem="h8E-wy-JdD" firstAttribute="centerY" secondItem="bg4-Dz-teF" secondAttribute="centerY" id="hNE-go-9Hb"/>
+                                                <constraint firstAttribute="trailing" secondItem="h8E-wy-JdD" secondAttribute="trailing" constant="20" symbolic="YES" id="wEz-gh-XFf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="cq1-OZ-Fp4" id="Pis-ut-14u"/>
+                            <outlet property="delegate" destination="cq1-OZ-Fp4" id="Ez7-jm-csP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="odU-Fp-dx2">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="478-Xr-GBr">
+                            <connections>
+                                <action selector="cancel:" destination="cq1-OZ-Fp4" id="SKw-qA-UbC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="VxN-rj-7y3">
+                            <connections>
+                                <action selector="done:" destination="cq1-OZ-Fp4" id="Uhf-UC-mn2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="h8E-wy-JdD" id="d4x-wi-Sgq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sP7-a2-tn8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1698.5507246376812" y="116.57608695652175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M2y-ch-AMx">
