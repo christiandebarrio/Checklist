@@ -12,16 +12,25 @@ class ChecklistViewController: UITableViewController {
   
   var todoList: TodoList
   
+  @IBAction func addItem(_ sender: Any) {
+    let newRowIndex = todoList.todos.count
+    _ = todoList.newTodo()
+    
+    let indexPath = IndexPath(row: newRowIndex, section: 0)
+    let indexPaths = [indexPath]
+    tableView.insertRows(at: indexPaths, with: .automatic)
+  }
+  
   required init?(coder aDecoder: NSCoder) {
-    
     todoList = TodoList()
-    
     super.init(coder: aDecoder)
   }
+ 
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
+    navigationController?.navigationBar.prefersLargeTitles = true
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

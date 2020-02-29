@@ -26,4 +26,11 @@ class TodoList {
     
     todos.append(contentsOf: [row0Item, row1Item, row2Item, row3Item, row4Item])
   }
+  
+  func newTodo() -> ChecklistItem {
+    let item = ChecklistItem()
+    item.text = "New todo item"
+    todos.append(item)
+    return item
+  }
 }
