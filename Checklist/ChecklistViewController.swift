@@ -73,3 +73,13 @@ class ChecklistViewController: UITableViewController {
     }
   }
 }
+
+extension ChecklistViewController: AddItemViewControllerDelegate {
+  func addItemViewControllerDidCancel(_ controller: AddItemTableViewController) {
+    navigationController?.popViewController(animated: true)
+  }
+  
+  func addItemViewController(_ controller: AddItemTableViewController, didFinishAdding item: ChecklistItem) {
+    navigationController?.popViewController(animated: true)
+  }
+}

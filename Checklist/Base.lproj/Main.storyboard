@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Checklist" id="ddF-34-igb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GRh-of-xbr">
                             <connections>
-                                <segue destination="cq1-OZ-Fp4" kind="show" id="Bnc-bS-AKo"/>
+                                <segue destination="cq1-OZ-Fp4" kind="show" identifier="AddItemSegue" id="Bnc-bS-AKo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
