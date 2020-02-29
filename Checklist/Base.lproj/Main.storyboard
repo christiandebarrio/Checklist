@@ -56,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="117.39130434782609"/>
         </scene>
-        <!--Add Item Table View Controller-->
+        <!--Title-->
         <scene sceneID="5jF-XT-ldl">
             <objects>
                 <tableViewController id="cq1-OZ-Fp4" customClass="AddItemTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
@@ -100,7 +100,7 @@
                             <outlet property="delegate" destination="cq1-OZ-Fp4" id="Ez7-jm-csP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="odU-Fp-dx2">
+                    <navigationItem key="navigationItem" title="Title" id="odU-Fp-dx2">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="478-Xr-GBr">
                             <connections>
                                 <action selector="cancel:" destination="cq1-OZ-Fp4" id="SKw-qA-UbC"/>
