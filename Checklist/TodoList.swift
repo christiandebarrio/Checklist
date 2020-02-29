@@ -10,7 +10,7 @@ import Foundation
 
 class TodoList {
   var todos: [ChecklistItem] = []
-
+  
   init() {
     let row0Item = ChecklistItem()
     let row1Item = ChecklistItem()
@@ -29,8 +29,23 @@ class TodoList {
   
   func newTodo() -> ChecklistItem {
     let item = ChecklistItem()
-    item.text = "New todo item"
+    item.text = getRandomTitle()
     todos.append(item)
+    
     return item
   }
+  
+  private func getRandomTitle() -> String {
+    let titles = [
+      "New todo item",
+      "Generic todo",
+      "Fill me out",
+      "I nedd something to do",
+      "Much todo about nothing"
+    ]
+    let randomNumber = Int.random(in: 0 ... titles.count - 1)
+    
+    return titles[randomNumber]
+  }
+  
 }

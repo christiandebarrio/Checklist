@@ -48,6 +48,7 @@ class ChecklistViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if let cell = tableView.cellForRow(at: indexPath) {
       let item = todoList.todos[indexPath.row]
+      item.toggleChecked()
       configureCheckmark(for: cell, with: item)
       tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -60,7 +61,6 @@ class ChecklistViewController: UITableViewController {
   }
   
   func configureCheckmark(for cell: UITableViewCell, with item:ChecklistItem ) {
-    item.toggleChecked()
     if item.checked {
       cell.accessoryType = .checkmark
     } else {
@@ -68,4 +68,3 @@ class ChecklistViewController: UITableViewController {
     }
   }
 }
-
