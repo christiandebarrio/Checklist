@@ -39,6 +39,11 @@ class AddItemTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    if let item = itemToEdit {
+      title = "Edit Item"
+      textfield.text = item.text
+      addBarButton.isEnabled = true
+    }
     navigationItem.largeTitleDisplayMode = .never
     textfield.delegate = self
   }

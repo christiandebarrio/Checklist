@@ -120,7 +120,7 @@
                                 <action selector="cancel:" destination="cq1-OZ-Fp4" id="SKw-qA-UbC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Add" id="VxN-rj-7y3">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="VxN-rj-7y3">
                             <connections>
                                 <action selector="done:" destination="cq1-OZ-Fp4" id="Uhf-UC-mn2"/>
                             </connections>
