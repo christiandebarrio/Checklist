@@ -48,7 +48,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="cq1-OZ-Fp4" kind="show" trigger="accessoryAction" id="0e8-OD-bNW"/>
+                                    <segue destination="cq1-OZ-Fp4" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="0e8-OD-bNW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

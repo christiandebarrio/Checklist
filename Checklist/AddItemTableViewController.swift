@@ -16,6 +16,8 @@ protocol AddItemViewControllerDelegate: class {
 class AddItemTableViewController: UITableViewController {
   
   weak var delegate: AddItemViewControllerDelegate?
+  weak var todoList: TodoList?
+  weak var itemToEdit: ChecklistItem?
   
   @IBOutlet weak var textfield: UITextField!
   @IBOutlet weak var addBarButton: UIBarButtonItem!
