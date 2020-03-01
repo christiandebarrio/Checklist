@@ -47,6 +47,9 @@
                                         <constraint firstAttribute="bottom" secondItem="2Tp-gL-Xh1" secondAttribute="bottom" constant="11" id="nxy-Ay-DeB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cq1-OZ-Fp4" kind="show" trigger="accessoryAction" id="0e8-OD-bNW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -152,4 +155,7 @@
             <point key="canvasLocation" x="31.884057971014496" y="117.39130434782609"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0e8-OD-bNW"/>
+    </inferredMetricsTieBreakers>
 </document>
