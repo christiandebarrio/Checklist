@@ -15,25 +15,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="uoC-VM-G92">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="uoC-VM-G92">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uoC-VM-G92" id="06d-NL-4y4">
-                                    <rect key="frame" x="0.0" y="0.0" width="370" height="44.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="44.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv2-oN-aoU">
-                                            <rect key="frame" x="20" y="11.333333333333334" width="330" height="21.666666666666664"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tp-gL-Xh1">
+                                            <rect key="frame" x="20" y="10.999999999999998" width="21" height="22.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pv2-oN-aoU">
+                                            <rect key="frame" x="49" y="11" width="294" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Pv2-oN-aoU" secondAttribute="bottom" constant="0.33000000000000002" id="Khc-Hk-hgK"/>
-                                        <constraint firstItem="Pv2-oN-aoU" firstAttribute="top" secondItem="06d-NL-4y4" secondAttribute="topMargin" constant="0.33000000000000002" id="ReO-24-WEO"/>
-                                        <constraint firstAttribute="trailing" secondItem="Pv2-oN-aoU" secondAttribute="trailing" constant="20" symbolic="YES" id="mqI-Xy-0oX"/>
-                                        <constraint firstItem="Pv2-oN-aoU" firstAttribute="leading" secondItem="06d-NL-4y4" secondAttribute="leading" constant="20" symbolic="YES" id="pN5-RH-xVi"/>
+                                        <constraint firstItem="Pv2-oN-aoU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Tp-gL-Xh1" secondAttribute="trailing" constant="8" symbolic="YES" id="37Q-cb-W42"/>
+                                        <constraint firstItem="Pv2-oN-aoU" firstAttribute="leading" secondItem="2Tp-gL-Xh1" secondAttribute="trailing" constant="8" symbolic="YES" id="3XB-Jc-dQZ"/>
+                                        <constraint firstItem="2Tp-gL-Xh1" firstAttribute="centerY" secondItem="Pv2-oN-aoU" secondAttribute="centerY" id="9hc-aV-gnw"/>
+                                        <constraint firstItem="2Tp-gL-Xh1" firstAttribute="leading" secondItem="06d-NL-4y4" secondAttribute="leading" constant="20" symbolic="YES" id="GgB-1D-iIb"/>
+                                        <constraint firstAttribute="trailing" secondItem="Pv2-oN-aoU" secondAttribute="trailing" constant="8" id="bYF-Ai-e9A"/>
+                                        <constraint firstItem="2Tp-gL-Xh1" firstAttribute="top" secondItem="Pv2-oN-aoU" secondAttribute="top" id="hZ1-WC-rd3"/>
+                                        <constraint firstItem="2Tp-gL-Xh1" firstAttribute="top" secondItem="06d-NL-4y4" secondAttribute="top" constant="11" id="jYl-lE-l7Q"/>
+                                        <constraint firstAttribute="bottom" secondItem="2Tp-gL-Xh1" secondAttribute="bottom" constant="11" id="nxy-Ay-DeB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
