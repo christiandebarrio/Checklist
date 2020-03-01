@@ -100,8 +100,7 @@ extension ChecklistViewController: AddItemViewControllerDelegate {
   
   func addItemViewController(_ controller: AddItemTableViewController, didFinishAdding item: ChecklistItem) {
     navigationController?.popViewController(animated: true)
-    let rowIndex = todoList.todos.count
-    todoList.todos.append(item)
+    let rowIndex = todoList.todos.count - 1
     let indexPath = IndexPath(row: rowIndex, section: 0)
     tableView.insertRows(at: [indexPath], with: .automatic)
   }
