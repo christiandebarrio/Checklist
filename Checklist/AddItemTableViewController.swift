@@ -11,6 +11,7 @@ import UIKit
 protocol AddItemViewControllerDelegate: class {
   func addItemViewControllerDidCancel(_ controller: AddItemTableViewController)
   func addItemViewController(_ controller: AddItemTableViewController, didFinishAdding item: ChecklistItem)
+  func addItemViewController(_ controler: AddItemTableViewController, didFinishEditing item: ChecklistItem)
 }
 
 class AddItemTableViewController: UITableViewController {
@@ -24,17 +25,20 @@ class AddItemTableViewController: UITableViewController {
   @IBOutlet weak var cancelBarButton: UIBarButtonItem!
   
   @IBAction func cancel(_ sender: Any) {
-    navigationController?.popViewController(animated: true)
     delegate?.addItemViewControllerDidCancel(self)
   }
   
   @IBAction func done(_ sender: Any) {
-    navigationController?.popViewController(animated: true)
-    let item = ChecklistItem()
-    if let textFieldText = textfield.text {
-      item.text = textFieldText
-    }
-    delegate?.addItemViewController(self, didFinishAdding: item)
+    if let item = itemToEdit, let text = textfield.text {
+      item.text = text
+      delegate?.addItemViewController(self, didFinishEditing: item)
+    } else {
+      if let item = todoList?.newTodo(){
+        if let textFieldText = textfield.text {
+          item.text = textFieldText
+        }
+        delegate?.addItemViewController(self, didFinishAdding: item)
+      }}
   }
   
   override func viewDidLoad() {
