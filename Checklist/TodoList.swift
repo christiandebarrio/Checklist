@@ -52,16 +52,16 @@ class TodoList {
     }
   }
   
-  func addTodo(_ item: ChecklistItem, for priority: Priority) {
+  func addTodo(_ item: ChecklistItem, for priority: Priority, at index: Int = -1) {
     switch priority {
     case .high:
-      highPriorityTodos.append(item)
+      index < 0 ? highPriorityTodos.append(item) : highPriorityTodos.insert(item, at: index)
     case .medium:
-      mediumPriorityTodos.append(item)
+      index < 0 ? mediumPriorityTodos.append(item) : mediumPriorityTodos.insert(item, at: index)
     case .low:
-      lowPriorityTodos.append(item)
+      index < 0 ? lowPriorityTodos.append(item) : lowPriorityTodos.insert(item, at: index)
     case .no:
-      noPriorityTodos.append(item)
+      index < 0 ? noPriorityTodos.append(item) : noPriorityTodos.insert(item, at: index)
     }
   }
   
@@ -86,10 +86,9 @@ class TodoList {
     return item
   }
   
-  func move(item: ChecklistItem, to index: Int) {
-    //    guard let currentIndex = todos.firstIndex(of: item) else { return }
-    //    todos.remove(at: currentIndex)
-    //    todos.insert(item, at: index)
+  func move(item: ChecklistItem, from sourcePriority: Priority, at sourceIndex: Int, to destinationPriority: Priority, at destinationIndex: Int) {
+    remove(item, from: sourcePriority, at: sourceIndex)
+    addTodo(item, for: destinationPriority, at: destinationIndex)
   }
   
   func remove(_ item: ChecklistItem, from priority: Priority, at index: Int){
