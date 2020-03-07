@@ -31,8 +31,10 @@ class ChecklistViewController: UITableViewController {
       for indexPath in selectedRows {
         if let priority = priorityForSectionIndex(indexPath.section){
           let todos = todoList.todoList(for: priority)
-          let item = todos[indexPath.row]
-          todoList.remove(item, from: priority, at: indexPath.row)
+          
+          let rowToDelete = indexPath.row > todos.count - 1 ? todos.count - 1 : indexPath.row
+          let item = todos[rowToDelete]
+          todoList.remove(item, from: priority, at: rowToDelete)
         }
       }
       tableView.beginUpdates()
@@ -161,16 +163,20 @@ extension ChecklistViewController: ItemDetailViewControllerDelegate {
   
   func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem) {
     navigationController?.popViewController(animated: true)
-    let rowIndex = todoList.todos.count - 1
-    let indexPath = IndexPath(row: rowIndex, section: 0)
+    let rowIndex = todoList.todoList(for: .medium).count - 1
+    let indexPath = IndexPath(row: rowIndex, section: TodoList.Priority.medium.rawValue)
     tableView.insertRows(at: [indexPath], with: .automatic)
   }
   
   func itemDetailViewController(_ controler: ItemDetailViewController, didFinishEditing item: ChecklistItem) {
-    if let index = todoList.todos.firstIndex(of: item) {
-      let indexPath = IndexPath(row: index, section: 0)
-      if let cell = tableView.cellForRow(at: indexPath) {
-        configureText(for: cell, with: item)
+    
+    for priority in TodoList.Priority.allCases {
+      let currentList = todoList.todoList(for: priority)
+      if let index = currentList.firstIndex(of: item) {
+        let indexPath = IndexPath(row: index, section: priority.rawValue)
+        if let cell = tableView.cellForRow(at: indexPath) {
+          configureText(for: cell, with: item)
+        }
       }
     }
     navigationController?.popViewController(animated: true)
