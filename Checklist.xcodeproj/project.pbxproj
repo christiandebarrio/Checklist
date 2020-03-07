@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA546B0B24127B90008523E3 /* ChecklistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA546B0A24127B90008523E3 /* ChecklistTableViewCell.swift */; };
 		AAE1D467240926C1000C90BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1D466240926C1000C90BB /* AppDelegate.swift */; };
 		AAE1D469240926C1000C90BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1D468240926C1000C90BB /* SceneDelegate.swift */; };
 		AAE1D46B240926C1000C90BB /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1D46A240926C1000C90BB /* ChecklistViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA546B0A24127B90008523E3 /* ChecklistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTableViewCell.swift; sourceTree = "<group>"; };
 		AAE1D463240926C1000C90BB /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE1D466240926C1000C90BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE1D468240926C1000C90BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				AAE1D46A240926C1000C90BB /* ChecklistViewController.swift */,
 				AAE1D47C24095958000C90BB /* ChecklistItem.swift */,
 				AAE1D46C240926C1000C90BB /* Main.storyboard */,
+				AA546B0A24127B90008523E3 /* ChecklistTableViewCell.swift */,
 				AAE1D480240A7F4F000C90BB /* ItemDetailViewController.swift */,
 				AAE1D46F240926C3000C90BB /* Assets.xcassets */,
 				AAE1D471240926C3000C90BB /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				AAE1D47F24096624000C90BB /* TodoList.swift in Sources */,
 				AAE1D46B240926C1000C90BB /* ChecklistViewController.swift in Sources */,
 				AAE1D481240A7F4F000C90BB /* ItemDetailViewController.swift in Sources */,
+				AA546B0B24127B90008523E3 /* ChecklistTableViewCell.swift in Sources */,
 				AAE1D467240926C1000C90BB /* AppDelegate.swift in Sources */,
 				AAE1D469240926C1000C90BB /* SceneDelegate.swift in Sources */,
 				AAE1D47D24095958000C90BB /* ChecklistItem.swift in Sources */,
