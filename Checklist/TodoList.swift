@@ -9,7 +9,16 @@
 import Foundation
 
 class TodoList {
-  var todos: [ChecklistItem] = []
+  
+  enum Priority: Int, CaseIterable {
+    case high, medium, low, no
+  }
+  
+  private var highPriorityTodos: [ChecklistItem] = []
+  private var mediumPriorityTodos: [ChecklistItem] = []
+  private var lowPriorityTodos: [ChecklistItem] = []
+  private var noPriorityTodos: [ChecklistItem] = []
+  
   
   init() {
     let row0Item = ChecklistItem()
@@ -24,31 +33,66 @@ class TodoList {
     row3Item.text = "Walk the dog"
     row4Item.text = "Study design patterns"
     
-    todos.append(contentsOf: [row0Item, row1Item, row2Item, row3Item, row4Item])
+    let items = [row0Item, row1Item, row2Item, row3Item, row4Item]
+    
+    for item in items {
+      self.addTodo(item, for: .medium)
+    }
+  }
+  
+  func addTodo(_ item: ChecklistItem, for priority: Priority) {
+    switch priority {
+       case .high:
+         highPriorityTodos.append(item)
+       case .medium:
+         mediumPriorityTodos.append(item)
+       case .low:
+         lowPriorityTodos.append(item)
+       case .no:
+         noPriorityTodos.append(item)
+       }
+  }
+  
+  func todoList(for priority: Priority) -> [ChecklistItem] {
+    switch priority {
+    case .high:
+      return highPriorityTodos
+    case .medium:
+      return mediumPriorityTodos
+    case .low:
+      return lowPriorityTodos
+    case .no:
+      return noPriorityTodos
+    }
   }
   
   func newTodo() -> ChecklistItem {
     let item = ChecklistItem()
     item.text = getRandomTitle()
-    todos.append(item)
+    mediumPriorityTodos.append(item)
     
     return item
   }
   
   func move(item: ChecklistItem, to index: Int) {
-    guard let currentIndex = todos.firstIndex(of: item) else { return }
-    todos.remove(at: currentIndex)
-    todos.insert(item, at: index)
+//    guard let currentIndex = todos.firstIndex(of: item) else { return }
+//    todos.remove(at: currentIndex)
+//    todos.insert(item, at: index)
   }
   
-  func remove(items:[ChecklistItem]){
-    for item in items {
-      if let index = todos.firstIndex(of: item) {
-        todos.remove(at: index)
-      }
+  func remove(_ item: ChecklistItem, from priority: Priority, at index: Int){
+    switch priority {
+    case .high:
+      highPriorityTodos.remove(at: index)
+    case .medium:
+      mediumPriorityTodos.remove(at: index)
+    case .low:
+      lowPriorityTodos.remove(at: index)
+    case .no:
+      noPriorityTodos.remove(at: index)
     }
   }
-  
+
   private func getRandomTitle() -> String {
     let titles = [
       "New todo item",
