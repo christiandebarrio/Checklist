@@ -143,17 +143,26 @@ class ChecklistViewController: UITableViewController {
     return TodoList.Priority.allCases.count
   }
   
-  override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-    return UILocalizedIndexedCollation.current().sectionTitles
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    if let priority = priorityForSectionIndex(section){
+      switch priority {
+      case .high:
+        return "High Priority Todos"
+      case .medium:
+        return "Medium Priority Todos"
+      case .low:
+        return "Low Priority Todos"
+      case .no:
+        return "Someday Todos"
+      }
+    }
+    return nil
   }
   
   override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
     return UILocalizedIndexedCollation.current().section(forSectionIndexTitle: index)
   }
   
-  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return UILocalizedIndexedCollation.current().sectionTitles[section]
-  }
 }
 
 extension ChecklistViewController: ItemDetailViewControllerDelegate {
